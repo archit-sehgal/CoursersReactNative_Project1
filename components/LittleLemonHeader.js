@@ -1,12 +1,20 @@
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 export default function LittleLemonHeader() {
   return (
-    <View style={{ width: "100%",backgroundColor: "whitesmoke" }}>
-      <Text style={{
-         textAlign: "center",
-        fontSize: 30, color: "#111", fontWeight: 700, padding: 15
-      }}>
+    <View style={styles.container}>
+      <Text style={styles.textdetails}>
         Little Lemon</Text>
     </View>
   )
 }
+const styles = StyleSheet.create({
+  container: {
+    width: "100%", backgroundColor: "yellow"
+  },
+  textdetails: {
+    textAlign: "center",
+    fontSize: 40,
+    color: "#111",
+    padding: 10
+  }
+})
