@@ -16,20 +16,19 @@ export default function LittleLemonWelcome() {
 }
 const menustyles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: "green"
+        flex: 1
     },
     content: {
         paddingHorizontal: 30,
         paddingVertical: 0
     },
     heading: {
-        fontSize:55, color: "whitesmoke", textAlign: "center"
+        fontSize:40, color: "#EDEFEE", textAlign: "center",marginTop:40
     },
     body: {
-        fontSize: 40,
+        fontSize: 20,
         textAlign: "center",
         paddingTop: 20,
-        color:"white"
+        color:"#EDEFEE"
     }
 })

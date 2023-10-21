@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet } from "react-native"
 export default function LittleLemonFooter() {
     return (
-        <View>
+        <View style={{marginBottom: 20}}>
             <Text style={styles.details}
             >All rights reserved
                 by Little Lemon, 2022</Text>
@@ -11,10 +11,11 @@ export default function LittleLemonFooter() {
 }
 const styles = StyleSheet.create({
     details: {
-        backgroundColor: "yellow",
+        backgroundColor: "#EE9972",
         fontSize: 20,
         color: "#111",
         padding: 1,
-        textAlign: "center"
+        textAlign: "center",
+        fontStyle: 'italic'
     }
 })

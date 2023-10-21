@@ -9,12 +9,12 @@ export default function LittleLemonHeader() {
 }
 const styles = StyleSheet.create({
   container: {
-    width: "100%", backgroundColor: "yellow"
+    width: "100%", backgroundColor: "#EE9972"
   },
   textdetails: {
     textAlign: "center",
     fontSize: 40,
     color: "#111",
-    padding: 10
+    padding: 2
   }
 })
