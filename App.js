@@ -4,13 +4,15 @@ import LittleLemonHeader from "./components/LittleLemonHeader";
 import LittleLemonFooter from "./components/LittleLemonFooter";
 import LittleLemonContent from "./components/LittleLemonContent";
 import LittleLemonWelcome from "./components/LittleLemonWelcome";
+import LittleLemonFeedback from "./components/LittleLemonFeedback";
 
 export default function WelcomeApp() {
   return (
     <View style={styles.container}>
       <LittleLemonHeader />
       {/* <LittleLemonWelcome/> */}
-      <LittleLemonContent/>
+      <LittleLemonFeedback/>
+      {/* <LittleLemonContent/> */}
       <LittleLemonFooter />
     </View>
   )
