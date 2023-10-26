@@ -26,7 +26,7 @@ const menustyles = StyleSheet.create({
         fontSize:40, color: "#EDEFEE", textAlign: "center",marginTop:40
     },
     body: {
-        fontSize: 20,
+        fontSize: 30,
         textAlign: "center",
         paddingTop: 20,
         color:"#EDEFEE"
