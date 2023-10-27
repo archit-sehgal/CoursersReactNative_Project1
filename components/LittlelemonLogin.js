@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
+import { ScrollView, StyleSheet, Text, TextInput,Alert, KeyboardAvoidingView, Platform } from 'react-native';
 export default function LittleLemonLogin() {
     const [email, onchangeemail] = useState("")
     const [password, onchangepassword] = useState("")
@@ -10,11 +10,16 @@ export default function LittleLemonLogin() {
             <TextInput style={styles.messageInput} placeholder='email'
                 keyboardType="email-address"
                 value={email}
-                onChangeText={onchangeemail} />
+                onChangeText={onchangeemail}
+                onFocus={()=>Alert.alert("done")}
+                onBlur={()=>Alert.alert("ok bye")} 
+                clearButtonMode='always'/>
             <TextInput style={styles.messageInput} placeholder='password'
                 secureTextEntry={true}
                 value={password}
-                onChangeText={onchangepassword} />
+                onChangeText={onchangepassword}
+                onFocus={()=>Alert.alert("done")} 
+                />
         </ScrollView>
     )
 }
