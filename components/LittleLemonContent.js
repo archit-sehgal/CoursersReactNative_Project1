@@ -1,4 +1,4 @@
-import { Text, View, Image, ScrollView, TextInput, SectionList, StyleSheet } from "react-native"
+import { Text, View, Image, ScrollView, TextInput, SectionList, StyleSheet,Pressable } from "react-native"
 import { useState } from "react"
 export default function LittleLemonContent() {
     const itemstodisplay = [
@@ -44,7 +44,7 @@ export default function LittleLemonContent() {
             ],
         },
     ];
-
+    const[showmenu,setshowmenu]=useState(false)
     const separator = () => (<Text style={menuStyles.separator}></Text>)
     // const footer=()=>(<Text style={menuStyles.footerText}>All rights reserved</Text>)
 
@@ -63,16 +63,24 @@ export default function LittleLemonContent() {
 
     return (
         <View style={menuStyles.container}>
+            {!showmenu==true&&(
+            <Text style={menuStyles.infoSection}>Little Lemon is a charming neighborhood bistro that
+                serves simple food and classic cocktails in a lively but casual environment
+                we would love to hear more about your experince with us!</Text>)}
+            <Pressable style={menuStyles.button} onPress={()=>{setshowmenu(!showmenu)}}>
+                <Text style={menuStyles.buttonText}t>{showmenu==false?"View menu":"home"}</Text>
+            </Pressable>
+            {showmenu==true&&(
             <SectionList sections={itemstodisplay}
                 renderItem={renderItem}
                 renderSectionHeader={renderSectionHeader}
-                ItemSeparatorComponent={separator} />
+                ItemSeparatorComponent={separator} />)}
         </View>
     )
 }
 const menuStyles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 1
     },
     innerContainer: {
         paddingHorizontal: 40,
@@ -103,5 +111,27 @@ const menuStyles = StyleSheet.create({
     },
     headerStyle: {
         backgroundColor: '#F4CE14',
+    },
+    infoSection: {
+        fontSize: 24,
+        padding: 20,
+        marginVertical: 8,
+        color: '#EDEFEE',
+        textAlign: 'center'
+    },
+    button: {
+        fontSize: 22,
+        padding: 10,
+        marginVertical: 8,
+        margin: 80,
+        backgroundColor: '#EDEFEE',
+        borderColor: '#EDEFEE',
+        borderWidth: 2,
+        borderRadius: 12
+      },
+      buttonText: {
+        color: '#333333',
+        textAlign: 'center',
+        fontSize: 32,
       }
 });
