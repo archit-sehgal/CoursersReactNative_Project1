@@ -1,4 +1,4 @@
-import { Text, View, Image, ScrollView, TextInput, SectionList, StyleSheet,Pressable } from "react-native"
+import { Text, View, Image, ScrollView, TextInput, SectionList, StyleSheet, Pressable } from "react-native"
 import { useState } from "react"
 export default function LittleLemonContent() {
     const itemstodisplay = [
@@ -44,10 +44,8 @@ export default function LittleLemonContent() {
             ],
         },
     ];
-    const[showmenu,setshowmenu]=useState(false)
+    const [showmenu, setshowmenu] = useState(false)
     const separator = () => (<Text style={menuStyles.separator}></Text>)
-    // const footer=()=>(<Text style={menuStyles.footerText}>All rights reserved</Text>)
-
     const Item = ({ name, price }) => (
         <View style={menuStyles.innerContainer}>
             <Text style={menuStyles.itemText}>{name}</Text>
@@ -63,29 +61,38 @@ export default function LittleLemonContent() {
 
     return (
         <View style={menuStyles.container}>
-            {!showmenu==true&&(
-            <Text style={menuStyles.infoSection}>Little Lemon is a charming neighborhood bistro that
-                serves simple food and classic cocktails in a lively but casual environment
-                we would love to hear more about your experince with us!</Text>)}
-            <Pressable style={menuStyles.button} onPress={()=>{setshowmenu(!showmenu)}}>
-                <Text style={menuStyles.buttonText}t>{showmenu==false?"View menu":"home"}</Text>
+            {!showmenu == true && (
+                <Text style={menuStyles.infoSection}>Little Lemon is a charming neighborhood bistro that
+                    serves simple food and classic cocktails in a lively but casual environment
+                    we would love to hear more about your experince with us!</Text>)}
+            <Pressable style={menuStyles.button} onPress={() => { setshowmenu(!showmenu) }}>
+                <Text style={menuStyles.buttonText} t>{showmenu == false ? "View menu" : "Home"}</Text>
             </Pressable>
-            {showmenu==true&&(
-            <SectionList sections={itemstodisplay}
-                renderItem={renderItem}
-                renderSectionHeader={renderSectionHeader}
-                ItemSeparatorComponent={separator} />)}
+            <Image source={{ uri: "https://png.pngtree.com/element_our/20190529/ourmid/pngtree-cartoon-lemon-png-download-image_1191053.jpg" }} style={menuStyles.image} />
+            {showmenu == true && (
+                <SectionList sections={itemstodisplay}
+                    renderItem={renderItem}
+                    renderSectionHeader={renderSectionHeader}
+                    ItemSeparatorComponent={separator} />)}
         </View>
     )
 }
 const menuStyles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        justifyContent:"center",
+        alignItems:"center"
     },
+    image: {
+        resizeMode:"contain",
+        width:100,
+        height:200
+    }
+    ,
     innerContainer: {
         paddingHorizontal: 40,
         paddingVertical: 20,
-        backgroundColor: '#333333',
+        backgroundColor: '#000',
         flexDirection: "row",
         justifyContent: "space-between"
     },
@@ -116,22 +123,22 @@ const menuStyles = StyleSheet.create({
         fontSize: 24,
         padding: 20,
         marginVertical: 8,
-        color: '#EDEFEE',
+        color: '#000',
         textAlign: 'center'
     },
     button: {
-        fontSize: 22,
-        padding: 10,
+        fontSize: 19,
+        paddingHorizontal: 20,
         marginVertical: 8,
-        margin: 80,
-        backgroundColor: '#EDEFEE',
-        borderColor: '#EDEFEE',
+        margin: 90,
+        backgroundColor: '#000',
+        borderColor: "#FFE666",
         borderWidth: 2,
         borderRadius: 12
-      },
-      buttonText: {
-        color: '#333333',
+    },
+    buttonText: {
+        color: '#FFE666',
         textAlign: 'center',
         fontSize: 32,
-      }
+    }
 });

@@ -11,9 +11,9 @@ export default function WelcomeApp() {
     <View style={styles.container}>
       <LittleLemonHeader />
       {/* <LittleLemonLogin/> */}
-      <LittleLemonWelcome/>
+      {/* <LittleLemonWelcome/> */}
       {/* <LittleLemonFeedback/> */}
-      {/* <LittleLemonContent/> */}
+      <LittleLemonContent/>
       <LittleLemonFooter />
     </View>
   )
@@ -21,6 +21,6 @@ export default function WelcomeApp() {
 const styles=StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:"#333333"
+    backgroundColor:"#FFE666"
   }
 })
