@@ -35,6 +35,7 @@ export default function LittleLemonFeedback() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor:"#000"
     },
     input: {
         height: 40,

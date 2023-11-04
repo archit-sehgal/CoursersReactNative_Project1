@@ -11,10 +11,10 @@ export default function LittleLemonFooter() {
 }
 const styles = StyleSheet.create({
     details: {
-        backgroundColor: "#EE9972",
+        backgroundColor: "#FFE666",
         fontSize: 20,
         color: "#111",
-        padding: 1,
+        paddingTop: 10,
         textAlign: "center",
         fontStyle: 'italic'
     }
