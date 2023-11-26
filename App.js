@@ -11,9 +11,9 @@ export default function WelcomeApp() {
     <View style={styles.container}>
       <LittleLemonHeader />
       {/* <LittleLemonLogin/> */}
-      {/* <LittleLemonWelcome/> */}
+      <LittleLemonWelcome/>
       {/* <LittleLemonFeedback/> */}
-      <LittleLemonContent/>
+      {/* <LittleLemonContent/> */}
       <LittleLemonFooter />
     </View>
   )
