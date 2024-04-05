@@ -9,16 +9,17 @@ import LittleLemonWelcome from "./components/LittleLemonWelcome";
 import LittleLemonFeedback from "./components/LittleLemonFeedback";
 import LittleLemonLogin from "./components/LittlelemonLogin";
 
-const Stack=createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function WelcomeApp() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
         <LittleLemonHeader />
-        <Stack.Navigator>
-          <Stack.Screen name="login" component={LittleLemonLogin}/>
-          {/* <Stack.Screen name="Welcome" component={LittleLemonWelcome}/> */}
+        <Stack.Navigator initialRouteName="Login" screenOptions={{ headerStyle: { backgroundColor: "#fffe" } }}>
+          <Stack.Screen name="Login" component={LittleLemonLogin}/>
+          <Stack.Screen options={{ title: "Home" }} name="Welcome" component={LittleLemonWelcome} />
+          <Stack.Screen name="Menu" component={LittleLemonContent} />
         </Stack.Navigator>
         <LittleLemonFooter />
       </View>
@@ -28,6 +29,6 @@ export default function WelcomeApp() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFE666"
+    backgroundColor: "#eee"
   }
 })
