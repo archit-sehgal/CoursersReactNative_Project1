@@ -44,7 +44,6 @@ export default function LittleLemonContent() {
             ],
         },
     ];
-    const [showmenu, setshowmenu] = useState(false)
     const separator = () => (<Text style={menuStyles.separator}></Text>)
     const Item = ({ name, price }) => (
         <View style={menuStyles.innerContainer}>
@@ -61,33 +60,22 @@ export default function LittleLemonContent() {
 
     return (
         <View style={menuStyles.container}>
-            {!showmenu == true && (
-                <View style={{flex:1,alignItems:"center",justifyContent:"center"}}>
-                <Image source={{ uri: "https://png.pngtree.com/element_our/20190529/ourmid/pngtree-cartoon-lemon-png-download-image_1191053.jpg" }} style={menuStyles.image} />
-                <Text style={menuStyles.infoSection}>
-                Little Lemon is a charming neighborhood bistro that
-                    serves simple food and classic cocktails in a lively but casual environment
-                    we would love to hear more about your experince with us!</Text></View>)}
-            <Pressable style={menuStyles.button} onPress={() => { setshowmenu(!showmenu) }}>
-                <Text style={menuStyles.buttonText} t>{showmenu == false ? "View menu" : "Home"}</Text>
-            </Pressable>
-            {showmenu == true && (
-                <SectionList sections={itemstodisplay}
-                    renderItem={renderItem}
-                    renderSectionHeader={renderSectionHeader}
-                    ItemSeparatorComponent={separator} />)}
+            <SectionList sections={itemstodisplay}
+                renderItem={renderItem}
+                renderSectionHeader={renderSectionHeader}
+                ItemSeparatorComponent={separator} />
         </View>
     )
 }
 const menuStyles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent:"center"
+        justifyContent: "center"
     },
     image: {
-        resizeMode:"cover",
-        width:100,
-        height:100
+        resizeMode: "cover",
+        width: 100,
+        height: 100
     }
     ,
     innerContainer: {
@@ -119,13 +107,6 @@ const menuStyles = StyleSheet.create({
     },
     headerStyle: {
         backgroundColor: '#F4CE14',
-    },
-    infoSection: {
-        fontSize: 24,
-        padding: 20,
-        marginVertical: 8,
-        color: '#000',
-        textAlign: 'center'
     },
     button: {
         fontSize: 19,
